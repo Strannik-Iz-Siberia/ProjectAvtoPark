@@ -13,7 +13,10 @@
                 <ResourceDictionary Source="Themes/DarkTheme.xaml"/>
 
 
-                <ResourceDictionary Source="Styles/MainStyle.xaml"/>
+                <ResourceDictionary Source="Assets/Icons.xaml"/>
+
+
+                <ResourceDictionary Source="Style/MainStyle.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
