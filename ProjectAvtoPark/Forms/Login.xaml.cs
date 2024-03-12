@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ProjectAvtoPark.Controllers;
 
 namespace ProjectAvtoPark.Forms
 {
@@ -19,6 +20,7 @@ namespace ProjectAvtoPark.Forms
     /// </summary>
     public partial class Login : Window
     {
+        UserController usercontrollers = new UserController();
         public Login()
         {
             InitializeComponent();
@@ -26,7 +28,25 @@ namespace ProjectAvtoPark.Forms
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if(!String.IsNullOrEmpty(txtLogin.Text) && !String.IsNullOrEmpty(txtPassword.Password))
+                {
+                    var user = usercontrollers.SignIn(txtLogin.Text.Trim().ToLower(), txtPassword.Password.Trim().ToLower());
+                    App.currentUser = user;
+                    Window clientWindow = new ClientForm(); // Создание нового экземпляра формы ClientWindow
+                    clientWindow.Show(); // Отображение формы
+                }
+                else
+                {
+                    MessageBox.Show("Не все поля заполнены!","Ошибка системы",MessageBoxButton.OK,MessageBoxImage.Warning);
+                }
 
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Пользователь не найден!", "Ошибка системы", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

@@ -44,11 +44,11 @@ namespace ProjectAvtoPark.Controllers
                 throw new Exception($"{ex.Message}");
             }
         }
-        public Пользователи GetCurrentUser(int userId)
+        public Пользователи SignIn(string login, string password)
         {
             try
             {
-                var user = connection.auth.Пользователи.Where(x => x.id_пользователь == userId).First();
+                var user = connection.auth.Пользователи.Where(x => x.Логин == login && x.Пароль == password).First();
                 return user;
             }
             catch (Exception ex)

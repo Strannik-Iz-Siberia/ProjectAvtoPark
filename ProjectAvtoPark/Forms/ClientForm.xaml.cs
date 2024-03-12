@@ -15,17 +15,18 @@ using System.Windows.Shapes;
 namespace ProjectAvtoPark.Forms
 {
     /// <summary>
-    /// Логика взаимодействия для Регистрация.xaml
+    /// Логика взаимодействия для ClientForm.xaml
     /// </summary>
-    public partial class Регистрация : Window
+    public partial class ClientForm : Window
     {
-        public Регистрация()
+        public ClientForm()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            txtwelcome.Text = $"Привет, {App.currentUser.Логин}";
 
         }
     }

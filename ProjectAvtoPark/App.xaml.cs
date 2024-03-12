@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectAvtoPark.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace ProjectAvtoPark
     /// </summary>
     public partial class App : Application
     {
+        public static Пользователи currentUser = null;
     }
 }
