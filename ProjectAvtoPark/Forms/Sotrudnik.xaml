@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Sotrudnik" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <TextBlock x:Name="txtwelcome"/>
+        <TextBlock x:Name="txtwelcome" Foreground="Blue"/>
     </Grid>
 </Window>
