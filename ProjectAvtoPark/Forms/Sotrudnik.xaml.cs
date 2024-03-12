@@ -26,6 +26,7 @@ namespace ProjectAvtoPark.Forms
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            txtwelcome.Text = $"Добрый день сотрудник, {App.currentUser.Логин}";
 
         }
     }

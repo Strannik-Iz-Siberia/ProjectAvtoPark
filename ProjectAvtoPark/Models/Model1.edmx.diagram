@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="69d6db90ac104258aa2fdfa2cc9e815f" Name="Diagram1">
+      <Diagram DiagramId="ed210fba3dc94e8c9df2ad21bc6da3c3" Name="Diagram1">
         <EntityTypeShape EntityType="AvtoParkModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AvtoParkModel.Автомобиль" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="AvtoParkModel.Аренда" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
@@ -17,6 +17,10 @@
         <EntityTypeShape EntityType="AvtoParkModel.Сотрудник" Width="1.5" PointX="7.5" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AvtoParkModel.Тарифы" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AvtoParkModel.Тип_кузова" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtoParkModel.View_Автомобили" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtoParkModel.View_Аренды" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtoParkModel.View_Клиенты" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtoParkModel.View_Сотрудники" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="AvtoParkModel.FK_Автомобиль_Модель_авто" ManuallyRouted="false" />
         <AssociationConnector Association="AvtoParkModel.FK_Аренда_Автомобиль" ManuallyRouted="false" />
         <AssociationConnector Association="AvtoParkModel.FK_Аренда_Пользователи" ManuallyRouted="false" />

@@ -9,6 +9,6 @@ namespace ProjectAvtoPark.Models
 {
     public class Connection
     {
-        public AvtoParkEntities auth = new AvtoParkEntities();
+        public AvtoParkEntities1 auth = new AvtoParkEntities1();
     }
 }

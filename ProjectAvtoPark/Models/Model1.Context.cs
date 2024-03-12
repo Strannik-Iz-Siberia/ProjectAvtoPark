@@ -13,10 +13,10 @@ namespace ProjectAvtoPark.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AvtoParkEntities : DbContext
+    public partial class AvtoParkEntities1 : DbContext
     {
-        public AvtoParkEntities()
-            : base("name=AvtoParkEntities")
+        public AvtoParkEntities1()
+            : base("name=AvtoParkEntities1")
         {
         }
     
@@ -37,5 +37,9 @@ namespace ProjectAvtoPark.Models
         public virtual DbSet<Сотрудник> Сотрудник { get; set; }
         public virtual DbSet<Тарифы> Тарифы { get; set; }
         public virtual DbSet<Тип_кузова> Тип_кузова { get; set; }
+        public virtual DbSet<View_Автомобили> View_Автомобили { get; set; }
+        public virtual DbSet<View_Аренды> View_Аренды { get; set; }
+        public virtual DbSet<View_Клиенты> View_Клиенты { get; set; }
+        public virtual DbSet<View_Сотрудники> View_Сотрудники { get; set; }
     }
 }
