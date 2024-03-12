@@ -23,5 +23,10 @@ namespace ProjectAvtoPark.Forms
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
