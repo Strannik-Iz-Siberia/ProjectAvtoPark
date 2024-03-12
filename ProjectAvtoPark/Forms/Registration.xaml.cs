@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace ProjectAvtoPark.Forms
 {
     /// <summary>
-    /// Логика взаимодействия для Регистрация.xaml
+    /// Логика взаимодействия для Registration.xaml
     /// </summary>
-    public partial class Регистрация : Window
+    public partial class Registration : Window
     {
-        public Регистрация()
+        public Registration()
         {
             InitializeComponent();
-        }
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

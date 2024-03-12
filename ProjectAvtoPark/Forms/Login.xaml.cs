@@ -59,5 +59,16 @@ namespace ProjectAvtoPark.Forms
                 MessageBox.Show(ex.Message, "Ошибка системы", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window Reg = new Registration();
+
+            // Закрытие текущего окна
+            this.Close();
+
+            // Открытие окна регистрации
+            Reg.Show();
+        }
     }
 }
