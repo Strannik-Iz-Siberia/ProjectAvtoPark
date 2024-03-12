@@ -30,22 +30,33 @@ namespace ProjectAvtoPark.Forms
         {
             try
             {
-                if(!String.IsNullOrEmpty(txtLogin.Text) && !String.IsNullOrEmpty(txtPassword.Password))
+                if (!String.IsNullOrEmpty(txtLogin.Text) && !String.IsNullOrEmpty(txtPassword.Password))
                 {
                     var user = usercontrollers.SignIn(txtLogin.Text.Trim().ToLower(), txtPassword.Password.Trim().ToLower());
                     App.currentUser = user;
-                    Window clientWindow = new ClientForm(); // Создание нового экземпляра формы ClientWindow
-                    clientWindow.Show(); // Отображение формы
+
+                    string userRole = usercontrollers.GetUserRoleById(user.id_пользователь);
+
+                    if (userRole == "client")
+                    {
+                        Window clientWindow = new ClientForm(); // Окно для клиента
+                        clientWindow.Show();
+                    }
+                    else if (userRole == "employee")
+                    {
+                        Window employeeWindow = new Sotrudnik(); // Окно для сотрудника
+                        employeeWindow.Show();
+                    }
+                    // Другие варианты обработки
                 }
                 else
                 {
-                    MessageBox.Show("Не все поля заполнены!","Ошибка системы",MessageBoxButton.OK,MessageBoxImage.Warning);
+                    MessageBox.Show("Не все поля заполнены!", "Ошибка системы", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show("Пользователь не найден!", "Ошибка системы", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(ex.Message, "Ошибка системы", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

@@ -15,5 +15,6 @@ namespace ProjectAvtoPark
     public partial class App : Application
     {
         public static Пользователи currentUser = null;
+        public static Пользователи userId = null;
     }
 }
