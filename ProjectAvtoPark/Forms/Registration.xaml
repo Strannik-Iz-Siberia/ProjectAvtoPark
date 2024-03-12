@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectAvtoPark.Forms"
         mc:Ignorable="d"
-        Title="Registration" Height="450" Width="800">
+        Title="Registration" Height="250" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Регистрация" FontSize="20"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Username:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" VerticalAlignment="Center" x:Name="tboxUsername" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Password:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center" x:Name="tboxPassword" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Name:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="5" VerticalAlignment="Center" x:Name="tboxNAme"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Phone:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="5" VerticalAlignment="Center" x:Name="txtPhone" />
+
+        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Register" Width="100" Margin="5" Click="RegisterButton_Click"/>
     </Grid>
 </Window>

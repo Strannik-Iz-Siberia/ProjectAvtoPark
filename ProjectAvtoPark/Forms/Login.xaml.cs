@@ -41,11 +41,15 @@ namespace ProjectAvtoPark.Forms
                     {
                         Window clientWindow = new ClientForm(); // Окно для клиента
                         clientWindow.Show();
+                        this.Close();
+
                     }
                     else if (userRole == "employee")
                     {
                         Window employeeWindow = new Sotrudnik(); // Окно для сотрудника
                         employeeWindow.Show();
+                        this.Close();
+
                     }
                     // Другие варианты обработки
                 }

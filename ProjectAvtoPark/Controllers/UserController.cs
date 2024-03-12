@@ -1,6 +1,7 @@
 ﻿using ProjectAvtoPark.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,26 +25,71 @@ namespace ProjectAvtoPark.Controllers
                 throw new Exception($"{ex.Message}");
             }
         }
-        public Пользователи CreateNewUsers()
+        public (Пользователи newUser, Клиент newClient) CreateNewUserAndClient(string username, string password, string name, string phone)
         {
             try
             {
-                Пользователи users = new Пользователи
+                using (var context = new AvtoParkEntities1())
                 {
-                    Логин = string.Empty,
-                    Пароль = string.Empty,
+                    // Генерация идентификатора пользователя
+                    int newUserId = GenerateNewUserIdForUser();
 
-                };
-                connection.auth.Пользователи.Add(users);
-                connection.auth.SaveChanges();
-                return users;
+                    // Создание нового пользователя
+                    Пользователи newUser = new Пользователи
+                    {
+                        id_пользователь = newUserId,
+                        Логин = username,
+                        Пароль = password
+                    };
+                    context.Пользователи.Add(newUser);
 
+                    // Генерация идентификатора клиента
+                    int newClientId = GenerateNewUserIdForClient();
+
+                    // Создание нового клиента
+                    Клиент newClient = new Клиент
+                    {
+                        id_клиента = newClientId,
+                        имя = name,
+                        Номер_телефона = phone,
+                        id_пользователь = newUserId
+                    };
+                    context.Клиент.Add(newClient);
+
+                    context.SaveChanges();
+
+                    return (newUser, newClient);
+                }
             }
             catch (Exception ex)
             {
                 throw new Exception($"{ex.Message}");
             }
         }
+
+        private int GenerateNewUserIdForUser()
+        {
+            // Пример: поиск максимального идентификатора пользователя и увеличение его на 1
+            using (var context = new AvtoParkEntities1())
+            {
+                int maxUserId = context.Пользователи.Max(u => u.id_пользователь);
+                return maxUserId + 1;
+            }
+        }
+
+        private int GenerateNewUserIdForClient()
+        {
+            // Пример: поиск максимального идентификатора клиента и увеличение его на 1
+            using (var context = new AvtoParkEntities1())
+            {
+                int maxClientId = context.Клиент.Max(c => c.id_клиента);
+                return maxClientId + 1;
+            }
+        }
+
+
+
+
         public Пользователи SignIn(string login, string password)
         {
             try

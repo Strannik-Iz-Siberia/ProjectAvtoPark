@@ -24,6 +24,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Авторизация" FontSize="20"/>
@@ -34,6 +35,8 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Password:" VerticalAlignment="Center"/>
         <PasswordBox Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Enter your password" x:Name="txtPassword"/>
 
-        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Login" Width="100" Margin="5"/>
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Login" Width="100" Click="btnLogin_Click" Margin="5"/>
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Регистрация" Width="100" Margin="5" Click="Button_Click"/>
+
     </Grid>
 </Window>
