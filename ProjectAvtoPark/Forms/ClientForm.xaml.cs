@@ -213,7 +213,5 @@ namespace ProjectAvtoPark.Forms
         {
             fContainer.Navigate(new System.Uri("Forms/Pages/Dashboard.xaml", UriKind.RelativeOrAbsolute));
         }
-
-        
     }
 }
