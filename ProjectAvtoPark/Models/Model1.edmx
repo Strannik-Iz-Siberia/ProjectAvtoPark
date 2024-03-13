@@ -113,6 +113,84 @@
           <Property Name="название" Type="varchar" MaxLength="255" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "AvtoPark.dbo.Arenda" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Arenda">
+          <Property Name="Название тарифа" Type="varchar" MaxLength="255" />
+          <Property Name="Стоимость" Type="int" />
+          <Property Name="Дата начала аренды" Type="date" />
+          <Property Name="Дата окончания аренды" Type="date" />
+          <Property Name="Итоговая стоимость" Type="int" />
+          <Property Name="Название автомобиля" Type="varchar" MaxLength="255" />
+          <Property Name="Имя клиента" Type="varchar" MaxLength="255" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "AvtoPark.dbo.CarInformation" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="CarInformation">
+          <Key>
+            <PropertyRef Name="Статус авто" />
+          </Key>
+          <Property Name="Номерной знак" Type="varchar" MaxLength="255" />
+          <Property Name="Статус авто" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Модель авто" Type="varchar" MaxLength="255" />
+          <Property Name="Марка авто" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "AvtoPark.dbo.Clients" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Статус аренды" />
+          </Key>
+          <Property Name="Имя клиента" Type="varchar" MaxLength="255" />
+          <Property Name="Номер телефона" Type="varchar" MaxLength="20" />
+          <Property Name="Логин" Type="varchar" MaxLength="255" />
+          <Property Name="Пароль" Type="varchar" MaxLength="255" />
+          <Property Name="Статус аренды" Type="varchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "AvtoPark.dbo.Rent" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Rent">
+          <Property Name="Название тарифа" Type="varchar" MaxLength="255" />
+          <Property Name="Стоимость" Type="int" />
+          <Property Name="Дата начала аренды" Type="date" />
+          <Property Name="Дата окончания аренды" Type="date" />
+          <Property Name="Итоговая стоимость" Type="int" />
+          <Property Name="Название автомобиля" Type="varchar" MaxLength="255" />
+          <Property Name="Имя клиента" Type="varchar" MaxLength="255" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "AvtoPark.dbo.RentArenda" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="RentArenda">
+          <Property Name="Название тарифа" Type="varchar" MaxLength="255" />
+          <Property Name="Стоимость" Type="int" />
+          <Property Name="Дата начала аренды" Type="date" />
+          <Property Name="Дата окончания аренды" Type="date" />
+          <Property Name="Итоговая стоимость" Type="int" />
+          <Property Name="Название автомобиля" Type="varchar" MaxLength="255" />
+          <Property Name="Имя клиента" Type="varchar" MaxLength="255" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "AvtoPark.dbo.RentInfo" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="RentInfo">
+          <Property Name="Название тарифа" Type="varchar" MaxLength="255" />
+          <Property Name="Стоимость" Type="int" />
+          <Property Name="Дата начала аренды" Type="date" />
+          <Property Name="Дата окончания аренды" Type="date" />
+          <Property Name="Итоговая стоимость" Type="int" />
+          <Property Name="Название автомобиля" Type="varchar" MaxLength="255" />
+          <Property Name="Имя клиента" Type="varchar" MaxLength="255" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "AvtoPark.dbo.RentInformation" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="RentInformation">
+          <Property Name="Название тарифа" Type="varchar" MaxLength="255" />
+          <Property Name="Стоимость" Type="int" />
+          <Property Name="Дата начала аренды" Type="date" />
+          <Property Name="Дата окончания аренды" Type="date" />
+          <Property Name="Итоговая стоимость" Type="int" />
+          <Property Name="Название автомобиля" Type="varchar" MaxLength="255" />
+          <Property Name="Имя клиента" Type="varchar" MaxLength="255" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "AvtoPark.dbo.View_Автомобили" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="View_Автомобили">
           <Key>
@@ -305,6 +383,23 @@
           <EntitySet Name="Сотрудник" EntityType="Self.Сотрудник" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Тарифы" EntityType="Self.Тарифы" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Тип_кузова" EntityType="Self.Тип_кузова" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CarInformation" EntityType="Self.CarInformation" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CarInformation].[Номерной знак] AS [Номерной знак], 
+    [CarInformation].[Статус авто] AS [Статус авто], 
+    [CarInformation].[Модель авто] AS [Модель авто], 
+    [CarInformation].[Марка авто] AS [Марка авто]
+    FROM [dbo].[CarInformation] AS [CarInformation]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Clients" EntityType="Self.Clients" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Clients].[Имя клиента] AS [Имя клиента], 
+    [Clients].[Номер телефона] AS [Номер телефона], 
+    [Clients].[Логин] AS [Логин], 
+    [Clients].[Пароль] AS [Пароль], 
+    [Clients].[Статус аренды] AS [Статус аренды]
+    FROM [dbo].[Clients] AS [Clients]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="View_Автомобили" EntityType="Self.View_Автомобили" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [View_Автомобили].[id_автомобиля] AS [id_автомобиля], 
@@ -518,6 +613,25 @@
           <Property Name="название" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Модель_авто" Relationship="Self.FK_Модель_авто_Тип_кузова" FromRole="Тип_кузова" ToRole="Модель_авто" />
         </EntityType>
+        <EntityType Name="CarInformation">
+          <Key>
+            <PropertyRef Name="Статус_авто" />
+          </Key>
+          <Property Name="Номерной_знак" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Статус_авто" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Модель_авто" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Марка_авто" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Статус_аренды" />
+          </Key>
+          <Property Name="Имя_клиента" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Номер_телефона" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Логин" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Пароль" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Статус_аренды" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
         <EntityType Name="View_Автомобили">
           <Key>
             <PropertyRef Name="id_автомобиля" />
@@ -696,6 +810,8 @@
           <EntitySet Name="Сотрудник" EntityType="Self.Сотрудник" />
           <EntitySet Name="Тарифы" EntityType="Self.Тарифы" />
           <EntitySet Name="Тип_кузова" EntityType="Self.Тип_кузова" />
+          <EntitySet Name="CarInformation" EntityType="Self.CarInformation" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" />
           <EntitySet Name="View_Автомобили" EntityType="Self.View_Автомобили" />
           <EntitySet Name="View_Аренды" EntityType="Self.View_Аренды" />
           <EntitySet Name="View_Клиенты" EntityType="Self.View_Клиенты" />
@@ -863,6 +979,27 @@
               <MappingFragment StoreEntitySet="Тип_кузова">
                 <ScalarProperty Name="id_тип_кузова" ColumnName="id_тип_кузова" />
                 <ScalarProperty Name="название" ColumnName="название" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarInformation">
+            <EntityTypeMapping TypeName="AvtoParkModel.CarInformation">
+              <MappingFragment StoreEntitySet="CarInformation">
+                <ScalarProperty Name="Номерной_знак" ColumnName="Номерной знак" />
+                <ScalarProperty Name="Статус_авто" ColumnName="Статус авто" />
+                <ScalarProperty Name="Модель_авто" ColumnName="Модель авто" />
+                <ScalarProperty Name="Марка_авто" ColumnName="Марка авто" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="AvtoParkModel.Clients">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Имя_клиента" ColumnName="Имя клиента" />
+                <ScalarProperty Name="Номер_телефона" ColumnName="Номер телефона" />
+                <ScalarProperty Name="Логин" ColumnName="Логин" />
+                <ScalarProperty Name="Пароль" ColumnName="Пароль" />
+                <ScalarProperty Name="Статус_аренды" ColumnName="Статус аренды" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

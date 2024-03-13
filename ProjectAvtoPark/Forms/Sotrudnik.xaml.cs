@@ -71,7 +71,7 @@ namespace ProjectAvtoPark.Forms
                 Popup.PlacementTarget = btnProducts;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Клиенты";
+                Header.PopupText.Text = "Автомобили";
             }
         }
 
@@ -163,8 +163,15 @@ namespace ProjectAvtoPark.Forms
 
         private void btnDashboard_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Forms/Pages/Dashboard.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Forms/Pages/Dogovor.xaml", UriKind.RelativeOrAbsolute));
         }
 
+        
+
+        private void btnProducts_Click_1(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Forms/Pages/Car.xaml", UriKind.RelativeOrAbsolute));
+
+        }
     }
 }

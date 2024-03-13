@@ -24,4 +24,20 @@
 
     <SolidColorBrush x:Key="btnClose" Color="#F72626"/>
 
+    <Style x:Key="GridStyle" TargetType="DataGrid">
+        <Setter Property="Background" Value="#F3F3F3"/>
+        <Style.Resources>
+            <Style TargetType="DataGridRow">
+                <Setter Property="Background" Value="#F3F3F3"/>
+                <Setter Property="Foreground" Value="#2b2b2b"/>
+            </Style>
+            <Style TargetType="DataGridColumnHeader">
+                <Setter Property="Background" Value="#f0f5ff"/>
+                <Setter Property="Foreground" Value="#2b2b2b"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+
 </ResourceDictionary>

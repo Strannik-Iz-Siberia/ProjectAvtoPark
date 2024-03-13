@@ -15,11 +15,20 @@ namespace ProjectAvtoPark.Models
     
     public partial class AvtoParkEntities1 : DbContext
     {
+        private static AvtoParkEntities1 _context;
+
         public AvtoParkEntities1()
             : base("name=AvtoParkEntities1")
         {
         }
-    
+        public static AvtoParkEntities1 GetContext()
+        {
+            if (_context == null)
+                _context = new AvtoParkEntities1();
+            return _context;
+        }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -37,6 +46,8 @@ namespace ProjectAvtoPark.Models
         public virtual DbSet<Сотрудник> Сотрудник { get; set; }
         public virtual DbSet<Тарифы> Тарифы { get; set; }
         public virtual DbSet<Тип_кузова> Тип_кузова { get; set; }
+        public virtual DbSet<CarInformation> CarInformation { get; set; }
+        public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<View_Автомобили> View_Автомобили { get; set; }
         public virtual DbSet<View_Аренды> View_Аренды { get; set; }
         public virtual DbSet<View_Клиенты> View_Клиенты { get; set; }
