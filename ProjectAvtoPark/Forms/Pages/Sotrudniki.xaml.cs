@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectAvtoPark.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace ProjectAvtoPark.Forms.Pages
         public Sotrudniki()
         {
             InitializeComponent();
+            clientdata.ItemsSource = AvtoParkEntities1.GetContext().Clients.ToList();
         }
     }
 }

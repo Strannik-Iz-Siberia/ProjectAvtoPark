@@ -9,6 +9,21 @@
       Title="Sotrudniki">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="377*"/>
+
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="clientdata" Grid.Row="0" AutoGenerateColumns="False" Background ="Transparent" 
+               GridLinesVisibility="None" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" 
+               SelectionMode="Single" FontSize="15" SelectionUnit="FullRow" Style="{DynamicResource GridStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Имя_клиента }" />
+                <DataGridTextColumn Header="Номер телефона" Width="*" Binding="{Binding Номер_телефона}"/>
+                <DataGridTextColumn Header="Логин" Width="*" Binding="{Binding Логин}" />
+                <DataGridTextColumn Header="Пароль" Width="*" Binding="{Binding Пароль }" />
+                <DataGridTextColumn Header="Статус аренды" Width="*" Binding="{Binding Статус_аренды }" />
+
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
