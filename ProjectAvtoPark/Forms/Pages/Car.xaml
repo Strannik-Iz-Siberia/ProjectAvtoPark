@@ -8,24 +8,29 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Car" Loaded="Page_Loaded">
-    
+
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Добавляем строку для кнопки -->
             <RowDefinition Height="377*"/>
-
         </Grid.RowDefinitions>
-        <DataGrid x:Name="carDataGrid" Grid.Row="0" AutoGenerateColumns="False" Background ="Transparent" 
-               GridLinesVisibility="None" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" 
-               SelectionMode="Single" FontSize="17" SelectionUnit="FullRow" Style="{DynamicResource GridStyle}">
+
+        <!-- Добавляем кнопку в первую строку -->
+        <Button Content="Печать" HorizontalAlignment="Left" Margin="752,5,0,0" Height="20" VerticalAlignment="Top" Click="Button_Click"/>
+
+        <DataGrid x:Name="carDataGrid" Grid.Row="1" AutoGenerateColumns="False" Background="Transparent"
+              GridLinesVisibility="None" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"
+              SelectionMode="Single" FontSize="17" SelectionUnit="FullRow" Style="{DynamicResource GridStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номерной знак" Width="*" Binding="{Binding CarNumber}" />
-                <DataGridTextColumn Header="Статус авто" Width="*" Binding="{Binding CarStatus }" />
-                <DataGridTextColumn Header="Модель авто" Width="*" Binding="{Binding ModelName }" />
-                <DataGridTextColumn Header="Марка автo" Width="*" Binding="{Binding Markaname }" />
-
+                <DataGridTextColumn Header="Статус авто" Width="*" Binding="{Binding CarStatus}" />
+                <DataGridTextColumn Header="Модель авто" Width="*" Binding="{Binding ModelName}" />
+                <DataGridTextColumn Header="Марка авто" Width="*" Binding="{Binding Markaname}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
+
 
 </Page>

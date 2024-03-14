@@ -1,4 +1,5 @@
-﻿using ProjectAvtoPark.Models;
+﻿using ProjectAvtoPark.Forms.Controls;
+using ProjectAvtoPark.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -30,23 +32,27 @@ namespace ProjectAvtoPark.Forms.Pages
 
         private void LoadData()
         {
-            Connection connection = new Connection();
-
             var carsData = AvtoParkEntities1.GetContext().View_Автомобили.ToList();
             var carModelsData = AvtoParkEntities1.GetContext().Марка_авто.ToList();
 
-            // Объединяем данные из двух таблиц
-            var mergedData = from car in carsData
-                             join model in carModelsData on car.id_автомобиля equals model.id_марка
-                             select new
-                             {
-                                 CarNumber = car.номерной_знак,
-                                 CarStatus = car.Статус,
-                                 ModelName = car.Модель,
-                                 Markaname = model.название
-                             };
+            List<RentalInfo> mergedData = new List<RentalInfo>();
+            foreach (var car in carsData)
+            {
+                var model = carModelsData.FirstOrDefault(m => m.id_марка == car.id_автомобиля);
+                if (model != null)
+                {
+                    RentalInfo rentalInfo = new RentalInfo
+                    {
+                        CarNumber = car.номерной_знак,
+                        CarStatus = car.Статус, // Предполагая, что car.Статус имеет тип bool?
+                        ModelName = car.Модель,
+                        Markaname = model.название
+                    };
+                    mergedData.Add(rentalInfo);
+                }
+            }
 
-            carDataGrid.ItemsSource = mergedData;
+            carDataGrid.ItemsSource = mergedData.ToList();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -54,6 +60,40 @@ namespace ProjectAvtoPark.Forms.Pages
             LoadData();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.IsEnabled = false;
+                PrintDialog printDialog = new PrintDialog();
 
+                if (printDialog.ShowDialog() == true)
+                {
+                    FixedDocument document = new FixedDocument();
+                    foreach (RentalInfo item in carDataGrid.ItemsSource)
+                    {
+                        // Создаем экземпляр UserControl, являющийся шаблоном для одной страницы для печати
+                        UserControlCar printTemplate = new UserControlCar(); // Замените на вашу разметку
+
+                        // Заполняем шаблон данными из объекта RentalInfo
+                        ContentControl content = new ContentControl();
+                        content.Content = printTemplate;
+                        content.DataContext = item; // Устанавливаем DataContext для ContentControl
+
+                        // Создаем и добавляем PageContent в документ FixedDocument
+                        PageContent pageContent = new PageContent();
+                        FixedPage fixedPage = new FixedPage();
+                        fixedPage.Children.Add(content);
+                        ((IAddChild)pageContent).AddChild(fixedPage);
+                        document.Pages.Add(pageContent);
+                    }
+                    printDialog.PrintDocument(document.DocumentPaginator, "Имя документа");
+                }
+            }
+            finally
+            {
+                this.IsEnabled = true;
+            }
+        }
     }
 }

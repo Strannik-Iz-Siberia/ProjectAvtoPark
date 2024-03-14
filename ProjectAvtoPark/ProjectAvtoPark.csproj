@@ -94,6 +94,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\Controls\UserControlCar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\Controls\UserControlPrint.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +160,9 @@
     </Compile>
     <Compile Include="Forms\Controls\MenuItem.xaml.cs">
       <DependentUpon>MenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\UserControlCar.xaml.cs">
+      <DependentUpon>UserControlCar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\Controls\UserControlPrint.xaml.cs">
       <DependentUpon>UserControlPrint.xaml</DependentUpon>
@@ -318,9 +325,9 @@
     <Resource Include="Resources\admin.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\logo.jpg" />
+    <Resource Include="Resources\pechat.jpg" />
     <Resource Include="Resources\pechat3.png" />
-    <Resource Include="Resources\pechat.png" />
-    <Resource Include="Resources\logo.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

@@ -41,6 +41,24 @@ namespace ProjectAvtoPark.Models
             set { _carNumber = value; OnPropertyChanged("CardName"); }
         }
 
+
+        private string _markaname;
+        public string Markaname
+        {
+            get { return _markaname; }
+            set { _markaname = value; OnPropertyChanged("Markaname"); }
+        }
+
+
+        private string _modelName;
+        public string ModelName
+        {
+            get { return _modelName; }
+            set { _modelName = value; OnPropertyChanged("ModelName"); }
+        }
+
+
+
         private int? _modelId;
 
         public int? ModelId
@@ -49,8 +67,8 @@ namespace ProjectAvtoPark.Models
             set { _modelId = value; OnPropertyChanged("ModelId"); }
         }
 
-        private bool? _carStatus;
-        public bool? CarStatus
+        private string _carStatus;
+        public string CarStatus
         {
             get { return _carStatus; }
             set { _carStatus = value; OnPropertyChanged("CarStatus"); }
