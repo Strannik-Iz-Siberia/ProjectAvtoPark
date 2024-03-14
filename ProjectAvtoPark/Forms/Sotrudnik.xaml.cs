@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static MaterialDesignThemes.Wpf.Theme;
 
 namespace ProjectAvtoPark.Forms
 {
@@ -177,6 +178,12 @@ namespace ProjectAvtoPark.Forms
         private void btnProductStock_Click(object sender, RoutedEventArgs e)
         {
             fContainer.Navigate(new System.Uri("Forms/Pages/Sotrudniki.xaml", UriKind.RelativeOrAbsolute));
+
+        }
+
+        private void btnOrderList_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Forms/Pages/Print.xaml", UriKind.RelativeOrAbsolute));
 
         }
     }
