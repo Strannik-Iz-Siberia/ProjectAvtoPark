@@ -9,17 +9,21 @@
       Title="Print" Background="White">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="377*"/>
-
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="Otchet" Grid.Row="0" AutoGenerateColumns="False" Background ="Transparent" 
-               GridLinesVisibility="None" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" 
-               SelectionMode="Single" FontSize="17" SelectionUnit="FullRow" Style="{DynamicResource GridStyle}">
+
+        <Button Content="Печать" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Click="Button_Click"/>
+
+        <DataGrid x:Name="Otchet" Grid.Row="1" AutoGenerateColumns="False" Background="Transparent"
+              GridLinesVisibility="None" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"
+              SelectionMode="Single" FontSize="17" SelectionUnit="FullRow" Style="{DynamicResource GridStyle}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="N:" Width="*" Binding="{Binding Номер }" />
-                <DataGridTextColumn Header="Автомобиль" Width="*" Binding="{Binding Автомобиль }" />
-                <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Итоговая_цена  }" />
+                <DataGridTextColumn Header="N:" Width="*" Binding="{Binding CarId}" />
+                <DataGridTextColumn Header="Автомобиль" Width="*" Binding="{Binding CarNumber}" />
+                <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Cost}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
+
 </Page>
